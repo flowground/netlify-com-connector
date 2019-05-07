@@ -1,0 +1,9 @@
+{
+    "type": "object",
+    "properties": {
+        "account_slug": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "type": "object",
+    "properties": {
+        "role": {
+            "type": "string",
+            "enum": [
+                "Owner",
+                "Collaborator",
+                "Controller"
+            ]
+        },
+        "email": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

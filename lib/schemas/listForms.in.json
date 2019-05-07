@@ -1,0 +1,8 @@
+{
+    "type": "object",
+    "properties": {
+        "site_id": {
+            "type": "string"
+        }
+    }
+}

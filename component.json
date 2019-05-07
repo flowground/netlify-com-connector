@@ -1,0 +1,1269 @@
+{
+    "title": "Netlify's API definition",
+    "docsUrl": "",
+    "url": "https://api.apis.guru/v2/specs/netlify.com/0.1.0/swagger.json",
+    "envVars": {
+        "OAUTH_CLIENT_ID": {
+            "description": "OAuth Client ID"
+        },
+        "OAUTH_CLIENT_SECRET": {
+            "description": "OAuth Client Secret"
+        }
+    },
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://api.netlify.com/api/v1",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            },
+            "netlifyAuth": {
+                "label": "netlifyAuth",
+                "viewClass": "OAuthFieldView"
+            }
+        },
+        "oauth2": {
+            "client_id": "{{OAUTH_CLIENT_ID}}",
+            "client_secret": "{{OAUTH_CLIENT_SECRET}}",
+            "auth_uri": "https://app.netlify.com/authorize"
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "listAccountsForUser": {
+            "main": "./lib/actions/listAccountsForUser.js",
+            "title": "listAccountsForUser",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/listAccountsForUser.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "createAccount": {
+            "main": "./lib/actions/createAccount.js",
+            "title": "createAccount",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/createAccount.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "listAccountTypesForUser": {
+            "main": "./lib/actions/listAccountTypesForUser.js",
+            "title": "listAccountTypesForUser",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/listAccountTypesForUser.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "cancelAccount": {
+            "main": "./lib/actions/cancelAccount.js",
+            "title": "cancelAccount",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/cancelAccount.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "updateAccount": {
+            "main": "./lib/actions/updateAccount.js",
+            "title": "updateAccount",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/updateAccount.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "listAccountAuditEvents": {
+            "main": "./lib/actions/listAccountAuditEvents.js",
+            "title": "listAccountAuditEvents",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/listAccountAuditEvents.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "listPaymentMethodsForUser": {
+            "main": "./lib/actions/listPaymentMethodsForUser.js",
+            "title": "listPaymentMethodsForUser",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/listPaymentMethodsForUser.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getSiteBuild": {
+            "main": "./lib/actions/getSiteBuild.js",
+            "title": "getSiteBuild",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getSiteBuild.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "updateSiteBuildLog": {
+            "main": "./lib/actions/updateSiteBuildLog.js",
+            "title": "updateSiteBuildLog",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/updateSiteBuildLog.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "notifyBuildStart": {
+            "main": "./lib/actions/notifyBuildStart.js",
+            "title": "notifyBuildStart",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/notifyBuildStart.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "listDeployKeys": {
+            "main": "./lib/actions/listDeployKeys.js",
+            "title": "listDeployKeys",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/listDeployKeys.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "createDeployKey": {
+            "main": "./lib/actions/createDeployKey.js",
+            "title": "createDeployKey",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/createDeployKey.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "deleteDeployKey": {
+            "main": "./lib/actions/deleteDeployKey.js",
+            "title": "deleteDeployKey",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/deleteDeployKey.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getDeployKey": {
+            "main": "./lib/actions/getDeployKey.js",
+            "title": "getDeployKey",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getDeployKey.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getDeploy": {
+            "main": "./lib/actions/getDeploy.js",
+            "title": "getDeploy",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getDeploy.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "uploadDeployFile": {
+            "main": "./lib/actions/uploadDeployFile.js",
+            "title": "uploadDeployFile",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/octet-stream": "application/octet-stream",
+                        "application/json": "application/json"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/uploadDeployFile.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "uploadDeployFunction": {
+            "main": "./lib/actions/uploadDeployFunction.js",
+            "title": "uploadDeployFunction",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/octet-stream": "application/octet-stream",
+                        "application/json": "application/json"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/uploadDeployFunction.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "lockDeploy": {
+            "main": "./lib/actions/lockDeploy.js",
+            "title": "lockDeploy",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/lockDeploy.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "unlockDeploy": {
+            "main": "./lib/actions/unlockDeploy.js",
+            "title": "unlockDeploy",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/unlockDeploy.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "listForms": {
+            "main": "./lib/actions/listForms.js",
+            "title": "listForms",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/listForms.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "listFormSubmissions": {
+            "main": "./lib/actions/listFormSubmissions.js",
+            "title": "listFormSubmissions",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/listFormSubmissions.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "listHooksBySiteId": {
+            "main": "./lib/actions/listHooksBySiteId.js",
+            "title": "listHooksBySiteId",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/listHooksBySiteId.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "createHookBySiteId": {
+            "main": "./lib/actions/createHookBySiteId.js",
+            "title": "createHookBySiteId",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/createHookBySiteId.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "listHookTypes": {
+            "main": "./lib/actions/listHookTypes.js",
+            "title": "listHookTypes",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/listHookTypes.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "deleteHookBySiteId": {
+            "main": "./lib/actions/deleteHookBySiteId.js",
+            "title": "deleteHookBySiteId",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/deleteHookBySiteId.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getHook": {
+            "main": "./lib/actions/getHook.js",
+            "title": "getHook",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getHook.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "updateHook": {
+            "main": "./lib/actions/updateHook.js",
+            "title": "updateHook",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/updateHook.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "enableHook": {
+            "main": "./lib/actions/enableHook.js",
+            "title": "enableHook",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/enableHook.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "createTicket": {
+            "main": "./lib/actions/createTicket.js",
+            "title": "createTicket",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/createTicket.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "showTicket": {
+            "main": "./lib/actions/showTicket.js",
+            "title": "showTicket",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/showTicket.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "exchangeTicket": {
+            "main": "./lib/actions/exchangeTicket.js",
+            "title": "exchangeTicket",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/exchangeTicket.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "listSites": {
+            "main": "./lib/actions/listSites.js",
+            "title": "listSites",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/listSites.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "createSite": {
+            "main": "./lib/actions/createSite.js",
+            "title": "createSite",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/createSite.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "deleteSite": {
+            "main": "./lib/actions/deleteSite.js",
+            "title": "deleteSite",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/deleteSite.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getSite": {
+            "main": "./lib/actions/getSite.js",
+            "title": "getSite",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getSite.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "updateSite": {
+            "main": "./lib/actions/updateSite.js",
+            "title": "updateSite",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/updateSite.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "listSiteAssets": {
+            "main": "./lib/actions/listSiteAssets.js",
+            "title": "listSiteAssets",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/listSiteAssets.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "createSiteAsset": {
+            "main": "./lib/actions/createSiteAsset.js",
+            "title": "createSiteAsset",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/createSiteAsset.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "deleteSiteAsset": {
+            "main": "./lib/actions/deleteSiteAsset.js",
+            "title": "deleteSiteAsset",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/deleteSiteAsset.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getSiteAssetInfo": {
+            "main": "./lib/actions/getSiteAssetInfo.js",
+            "title": "getSiteAssetInfo",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getSiteAssetInfo.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "updateSiteAsset": {
+            "main": "./lib/actions/updateSiteAsset.js",
+            "title": "updateSiteAsset",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/updateSiteAsset.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getSiteAssetPublicSignature": {
+            "main": "./lib/actions/getSiteAssetPublicSignature.js",
+            "title": "getSiteAssetPublicSignature",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getSiteAssetPublicSignature.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "listSiteBuildHooks": {
+            "main": "./lib/actions/listSiteBuildHooks.js",
+            "title": "listSiteBuildHooks",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/listSiteBuildHooks.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "createSiteBuildHook": {
+            "main": "./lib/actions/createSiteBuildHook.js",
+            "title": "createSiteBuildHook",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/createSiteBuildHook.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "deleteSiteBuildHook": {
+            "main": "./lib/actions/deleteSiteBuildHook.js",
+            "title": "deleteSiteBuildHook",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/deleteSiteBuildHook.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getSiteBuildHook": {
+            "main": "./lib/actions/getSiteBuildHook.js",
+            "title": "getSiteBuildHook",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getSiteBuildHook.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "updateSiteBuildHook": {
+            "main": "./lib/actions/updateSiteBuildHook.js",
+            "title": "updateSiteBuildHook",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/updateSiteBuildHook.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "listSiteBuilds": {
+            "main": "./lib/actions/listSiteBuilds.js",
+            "title": "listSiteBuilds",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/listSiteBuilds.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "listSiteDeployedBranches": {
+            "main": "./lib/actions/listSiteDeployedBranches.js",
+            "title": "listSiteDeployedBranches",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/listSiteDeployedBranches.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "listSiteDeploys": {
+            "main": "./lib/actions/listSiteDeploys.js",
+            "title": "listSiteDeploys",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/listSiteDeploys.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "createSiteDeploy": {
+            "main": "./lib/actions/createSiteDeploy.js",
+            "title": "createSiteDeploy",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/createSiteDeploy.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getSiteDeploy": {
+            "main": "./lib/actions/getSiteDeploy.js",
+            "title": "getSiteDeploy",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getSiteDeploy.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "updateSiteDeploy": {
+            "main": "./lib/actions/updateSiteDeploy.js",
+            "title": "updateSiteDeploy",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/updateSiteDeploy.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "restoreSiteDeploy": {
+            "main": "./lib/actions/restoreSiteDeploy.js",
+            "title": "restoreSiteDeploy",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/restoreSiteDeploy.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getDNSForSite": {
+            "main": "./lib/actions/getDNSForSite.js",
+            "title": "getDNSForSite",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getDNSForSite.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "configureDNSForSite": {
+            "main": "./lib/actions/configureDNSForSite.js",
+            "title": "configureDNSForSite",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/configureDNSForSite.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "listSiteFiles": {
+            "main": "./lib/actions/listSiteFiles.js",
+            "title": "listSiteFiles",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/listSiteFiles.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getSiteFileByPathName": {
+            "main": "./lib/actions/getSiteFileByPathName.js",
+            "title": "getSiteFileByPathName",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getSiteFileByPathName.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "listSiteForms": {
+            "main": "./lib/actions/listSiteForms.js",
+            "title": "listSiteForms",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/listSiteForms.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getSiteMetadata": {
+            "main": "./lib/actions/getSiteMetadata.js",
+            "title": "getSiteMetadata",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getSiteMetadata.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "updateSiteMetadata": {
+            "main": "./lib/actions/updateSiteMetadata.js",
+            "title": "updateSiteMetadata",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/updateSiteMetadata.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "listSiteSnippets": {
+            "main": "./lib/actions/listSiteSnippets.js",
+            "title": "listSiteSnippets",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/listSiteSnippets.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "createSiteSnippet": {
+            "main": "./lib/actions/createSiteSnippet.js",
+            "title": "createSiteSnippet",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/createSiteSnippet.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "deleteSiteSnippet": {
+            "main": "./lib/actions/deleteSiteSnippet.js",
+            "title": "deleteSiteSnippet",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/deleteSiteSnippet.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getSiteSnippet": {
+            "main": "./lib/actions/getSiteSnippet.js",
+            "title": "getSiteSnippet",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getSiteSnippet.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "updateSiteSnippet": {
+            "main": "./lib/actions/updateSiteSnippet.js",
+            "title": "updateSiteSnippet",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/updateSiteSnippet.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "showSiteTLSCertificate": {
+            "main": "./lib/actions/showSiteTLSCertificate.js",
+            "title": "showSiteTLSCertificate",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/showSiteTLSCertificate.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "provisionSiteTLSCertificate": {
+            "main": "./lib/actions/provisionSiteTLSCertificate.js",
+            "title": "provisionSiteTLSCertificate",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/provisionSiteTLSCertificate.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "listSiteSubmissions": {
+            "main": "./lib/actions/listSiteSubmissions.js",
+            "title": "listSiteSubmissions",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/listSiteSubmissions.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "deleteSubmission": {
+            "main": "./lib/actions/deleteSubmission.js",
+            "title": "deleteSubmission",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/deleteSubmission.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "listFormSubmission": {
+            "main": "./lib/actions/listFormSubmission.js",
+            "title": "listFormSubmission",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/listFormSubmission.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "listMembersForAccount": {
+            "main": "./lib/actions/listMembersForAccount.js",
+            "title": "listMembersForAccount",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/listMembersForAccount.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "addMemberToAccount": {
+            "main": "./lib/actions/addMemberToAccount.js",
+            "title": "addMemberToAccount",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/addMemberToAccount.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "listSitesForAccount": {
+            "main": "./lib/actions/listSitesForAccount.js",
+            "title": "listSitesForAccount",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/listSitesForAccount.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "createSiteInTeam": {
+            "main": "./lib/actions/createSiteInTeam.js",
+            "title": "createSiteInTeam",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/createSiteInTeam.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}

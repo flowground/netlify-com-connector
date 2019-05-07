@@ -1,0 +1,33 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "properties": {
+                "extra_seats_block": {
+                    "type": "integer"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "payment_method_id": {
+                    "type": "string"
+                },
+                "period": {
+                    "enum": [
+                        "monthly",
+                        "yearly"
+                    ],
+                    "type": "string"
+                },
+                "type_id": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "name",
+                "type_id"
+            ],
+            "type": "object"
+        }
+    }
+}

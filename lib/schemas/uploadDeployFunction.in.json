@@ -1,0 +1,20 @@
+{
+    "type": "object",
+    "properties": {
+        "deploy_id": {
+            "required": true,
+            "type": "string"
+        },
+        "name": {
+            "required": true,
+            "type": "string"
+        },
+        "runtime": {
+            "type": "string"
+        },
+        "requestBody": {
+            "format": "binary",
+            "type": "string"
+        }
+    }
+}

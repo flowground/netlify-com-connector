@@ -1,0 +1,13 @@
+{
+    "type": "object",
+    "properties": {
+        "state": {
+            "required": true,
+            "type": "string"
+        },
+        "asset_id": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

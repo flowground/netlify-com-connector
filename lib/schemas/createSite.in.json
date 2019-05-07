@@ -1,0 +1,343 @@
+{
+    "type": "object",
+    "properties": {
+        "configure_dns": {
+            "type": "boolean"
+        },
+        "requestBody": {
+            "allOf": [
+                {
+                    "properties": {
+                        "account_name": {
+                            "type": "string"
+                        },
+                        "account_slug": {
+                            "type": "string"
+                        },
+                        "admin_url": {
+                            "type": "string"
+                        },
+                        "build_settings": {
+                            "properties": {
+                                "allowed_branches": {
+                                    "items": {
+                                        "type": "string"
+                                    },
+                                    "type": "array"
+                                },
+                                "cmd": {
+                                    "type": "string"
+                                },
+                                "deploy_key_id": {
+                                    "type": "string"
+                                },
+                                "dir": {
+                                    "type": "string"
+                                },
+                                "env": {
+                                    "additionalProperties": {
+                                        "type": "string"
+                                    },
+                                    "type": "object"
+                                },
+                                "id": {
+                                    "type": "integer"
+                                },
+                                "private_logs": {
+                                    "type": "boolean"
+                                },
+                                "provider": {
+                                    "type": "string"
+                                },
+                                "public_repo": {
+                                    "type": "boolean"
+                                },
+                                "repo_branch": {
+                                    "type": "string"
+                                },
+                                "repo_path": {
+                                    "type": "string"
+                                },
+                                "repo_url": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "capabilities": {
+                            "additionalProperties": {
+                                "type": "object"
+                            },
+                            "type": "object"
+                        },
+                        "created_at": {
+                            "format": "dateTime",
+                            "type": "string"
+                        },
+                        "custom_domain": {
+                            "type": "string"
+                        },
+                        "deploy_hook": {
+                            "type": "string"
+                        },
+                        "deploy_url": {
+                            "type": "string"
+                        },
+                        "domain_aliases": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "force_ssl": {
+                            "type": "boolean"
+                        },
+                        "git_provider": {
+                            "type": "string"
+                        },
+                        "id": {
+                            "type": "string"
+                        },
+                        "managed_dns": {
+                            "type": "boolean"
+                        },
+                        "name": {
+                            "type": "string"
+                        },
+                        "notification_email": {
+                            "type": "string"
+                        },
+                        "password": {
+                            "type": "string"
+                        },
+                        "plan": {
+                            "type": "string"
+                        },
+                        "processing_settings": {
+                            "properties": {
+                                "css": {
+                                    "properties": {
+                                        "bundle": {
+                                            "type": "boolean"
+                                        },
+                                        "minify": {
+                                            "type": "boolean"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "html": {
+                                    "properties": {
+                                        "pretty_urls": {
+                                            "type": "boolean"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "images": {
+                                    "properties": {
+                                        "optimize": {
+                                            "type": "boolean"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "js": {
+                                    "properties": {
+                                        "bundle": {
+                                            "type": "boolean"
+                                        },
+                                        "minify": {
+                                            "type": "boolean"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "skip": {
+                                    "type": "boolean"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "published_deploy": {
+                            "properties": {
+                                "admin_url": {
+                                    "type": "string"
+                                },
+                                "branch": {
+                                    "type": "string"
+                                },
+                                "build_id": {
+                                    "type": "string"
+                                },
+                                "commit_ref": {
+                                    "type": "string"
+                                },
+                                "commit_url": {
+                                    "type": "string"
+                                },
+                                "context": {
+                                    "type": "string"
+                                },
+                                "created_at": {
+                                    "format": "dateTime",
+                                    "type": "string"
+                                },
+                                "deploy_ssl_url": {
+                                    "type": "string"
+                                },
+                                "deploy_url": {
+                                    "type": "string"
+                                },
+                                "draft": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                },
+                                "id": {
+                                    "type": "string"
+                                },
+                                "locked": {
+                                    "type": "boolean"
+                                },
+                                "name": {
+                                    "type": "string"
+                                },
+                                "published_at": {
+                                    "format": "dateTime",
+                                    "type": "string"
+                                },
+                                "required": {
+                                    "items": {
+                                        "type": "string"
+                                    },
+                                    "type": "array"
+                                },
+                                "required_functions": {
+                                    "items": {
+                                        "type": "string"
+                                    },
+                                    "type": "array"
+                                },
+                                "review_id": {
+                                    "type": "number"
+                                },
+                                "review_url": {
+                                    "type": "string"
+                                },
+                                "screenshot_url": {
+                                    "type": "string"
+                                },
+                                "site_id": {
+                                    "type": "string"
+                                },
+                                "skipped": {
+                                    "type": "boolean"
+                                },
+                                "ssl_url": {
+                                    "type": "string"
+                                },
+                                "state": {
+                                    "type": "string"
+                                },
+                                "title": {
+                                    "type": "string"
+                                },
+                                "updated_at": {
+                                    "format": "dateTime",
+                                    "type": "string"
+                                },
+                                "url": {
+                                    "type": "string"
+                                },
+                                "user_id": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "screenshot_url": {
+                            "type": "string"
+                        },
+                        "session_id": {
+                            "type": "string"
+                        },
+                        "ssl": {
+                            "type": "boolean"
+                        },
+                        "ssl_url": {
+                            "type": "string"
+                        },
+                        "state": {
+                            "type": "string"
+                        },
+                        "updated_at": {
+                            "format": "dateTime",
+                            "type": "string"
+                        },
+                        "url": {
+                            "type": "string"
+                        },
+                        "user_id": {
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                {
+                    "properties": {
+                        "repo": {
+                            "properties": {
+                                "allowed_branches": {
+                                    "items": {
+                                        "type": "string"
+                                    },
+                                    "type": "array"
+                                },
+                                "cmd": {
+                                    "type": "string"
+                                },
+                                "deploy_key_id": {
+                                    "type": "string"
+                                },
+                                "dir": {
+                                    "type": "string"
+                                },
+                                "env": {
+                                    "additionalProperties": {
+                                        "type": "string"
+                                    },
+                                    "type": "object"
+                                },
+                                "id": {
+                                    "type": "integer"
+                                },
+                                "private_logs": {
+                                    "type": "boolean"
+                                },
+                                "provider": {
+                                    "type": "string"
+                                },
+                                "public_repo": {
+                                    "type": "boolean"
+                                },
+                                "repo_branch": {
+                                    "type": "string"
+                                },
+                                "repo_path": {
+                                    "type": "string"
+                                },
+                                "repo_url": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    },
+                    "type": "object"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,38 @@
+{
+    "type": "object",
+    "properties": {
+        "account_id": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "billing_details": {
+                    "type": "string"
+                },
+                "billing_email": {
+                    "type": "string"
+                },
+                "billing_name": {
+                    "type": "string"
+                },
+                "extra_seats_block": {
+                    "type": "integer"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "payment_method_id": {
+                    "type": "string"
+                },
+                "slug": {
+                    "type": "string"
+                },
+                "type_id": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

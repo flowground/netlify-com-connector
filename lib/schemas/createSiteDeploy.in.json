@@ -1,0 +1,25 @@
+{
+    "type": "object",
+    "properties": {
+        "title": {
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "async": {
+                    "type": "boolean"
+                },
+                "draft": {
+                    "type": "boolean"
+                },
+                "files": {
+                    "type": "object"
+                },
+                "functions": {
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

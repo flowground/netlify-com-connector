@@ -1,0 +1,21 @@
+{
+    "type": "object",
+    "properties": {
+        "name": {
+            "required": true,
+            "type": "string"
+        },
+        "size": {
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+        },
+        "content_type": {
+            "required": true,
+            "type": "string"
+        },
+        "visibility": {
+            "type": "string"
+        }
+    }
+}

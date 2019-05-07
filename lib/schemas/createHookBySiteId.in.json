@@ -1,0 +1,40 @@
+{
+    "type": "object",
+    "properties": {
+        "site_id": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "created_at": {
+                    "format": "dateTime",
+                    "type": "string"
+                },
+                "data": {
+                    "type": "object"
+                },
+                "disabled": {
+                    "type": "boolean"
+                },
+                "event": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "site_id": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "updated_at": {
+                    "format": "dateTime",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}
